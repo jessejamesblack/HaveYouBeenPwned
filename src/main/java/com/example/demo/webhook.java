@@ -18,14 +18,9 @@ import com.google.gson.JsonObject;
 @RestController
 public class webhook {
 	
-	// Test Get method
-	@RequestMapping(method = RequestMethod.GET)
-	public String index() {
-		return "Hello";
-	}
 
 	// Make post request to Dialogflow
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/pwned", method = RequestMethod.GET)
 	public String getPwnedStatus(@RequestBody String payload) {
 		// Get the fulfillment request JSON from Dialogflow
 		Gson gson = new Gson();
